@@ -1,2 +1,30 @@
-<h1>Photes#show</h1>
-<p>Find me in app/views/photes/show.html.erb</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= @phote.title %></h5>
+          <p class="card-text"><%= simple_format @phote.body %></p>
+          <p class="card-text">
+            <small class="text-muted">更新日：<%= @phote.updated_at.strftime("%Y-%m-%d") %></small>
+          </p>
+          <!--<%# if current_user.already_favorited?(@phote) %>-->
+          <!--  <%#= link_to recipe_favorites_path(@phote), method: :delete do %>-->
+          <!--    <i class="fas fa-heart"></i>-->
+          <!--  <%# end %>-->
+          <!--  <%#= @phote.favorites.count %>-->
+          <!--<%# else %>-->
+          <!--  <#= link_to recipe_favorites_path(@phote), method: :post do %>-->
+          <!--    <i class="far fa-heart"></i>-->
+          <!--  <%# end %>-->
+          <!--  <%#= @phote.favorites.count %>　-->
+          <!--<%# end %>-->
+          <% if @phote.user == current_user %>
+            <%= link_to '編集', edit_phote_path(@phote), class: "btn btn-success" %>
+            <%= link_to '削除', photes_path(@phote), method: :delete, class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

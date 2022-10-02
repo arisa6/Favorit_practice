@@ -1,2 +1,38 @@
-<h1>Photes#index</h1>
-<p>Find me in app/views/photes/index.html.erb</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-10 mx-auto">
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">テーマ</th>
+            <th scope="col">投稿者</th>
+            <th scope="col">　</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @photes.each do |recipe| %>
+            <tr>
+              <td><%= link_to phote.title, phote_path(phote) %></td>
+              <td><%= phote.user.name %></td>
+              <td>
+                <% if current_user.already_favorited?(phote) %>
+                  <%= link_to phote_favorits_path(phote), method: :delete do %>
+                    <i class="fas fa-heart"></i>
+                  <% end %>
+                  <%= phote.favorits.count %>
+                <% else %>
+                  <%= link_to phote_favorits_path(phote), method: :post do %>
+                    <i class="far fa-heart"></i>
+                  <% end %>
+                  <%= phote.favorits.count %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+  

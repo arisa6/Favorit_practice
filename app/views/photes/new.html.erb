@@ -1,2 +1,10 @@
-<h1>Photes#new</h1>
-<p>Find me in app/views/photes/new.html.erb</p>
+<%= render 'errors', phote: @phote %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h2>新規投稿</h2>
+        <%= render 'form', recipe: @phote %>
+    </div>
+  </div>
+</div>

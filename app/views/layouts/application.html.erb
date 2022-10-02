@@ -25,10 +25,10 @@
               <%= link_to 'マイページ', user_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-                <%= link_to '新規投稿', "#", class: "nav-link" %>
+                <%= link_to '新規投稿', new_phote_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-                <%= link_to '投稿一覧', "#", class: "nav-link" %>
+                <%= link_to '投稿一覧', photes_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
               <%= link_to "ログアウト", destroy_user_session_path, method: :get, class: "nav-link" %>
