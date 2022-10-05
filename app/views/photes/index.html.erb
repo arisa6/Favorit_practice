@@ -10,7 +10,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @photes.each do |recipe| %>
+          <% @photes.each do |phote| %>
             <tr>
               <td><%= link_to phote.title, phote_path(phote) %></td>
               <td><%= phote.user.name %></td>
