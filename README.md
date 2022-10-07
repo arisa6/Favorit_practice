@@ -24,4 +24,4 @@ Things you may want to cover:
 * ...
 
 
-**お気に入り機能　デモ
+** お気に入り機能　デモ
